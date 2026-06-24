@@ -22,7 +22,7 @@ const categoryColors: Record<string, { dot: string; bg: string; text: string }> 
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 border-t border-[#1f1f1f]">
+    <section id="skills" className="py-24 border-t border-line">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <motion.div
@@ -32,7 +32,7 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Skills & Tools</h2>
+          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-t1">Skills & Tools</h2>
         </motion.div>
 
         {/* Skill categories */}
@@ -51,14 +51,14 @@ export default function Skills() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: '-60px' }}
-                className="group bg-[#111111] border border-[#1f1f1f] hover:border-[#2a2a2a] rounded-2xl p-6 transition-colors"
+                className="group bg-surface border border-line hover:border-line2 rounded-2xl p-6 transition-colors"
               >
                 {/* Category header */}
                 <div className="flex items-center gap-3 mb-5">
                   <div className={`w-8 h-8 rounded-lg ${colors.bg} flex items-center justify-center font-mono text-sm ${colors.text} shrink-0`}>
                     {group.icon}
                   </div>
-                  <h3 className="font-semibold text-white text-sm">{group.category}</h3>
+                  <h3 className="font-semibold text-t1 text-sm">{group.category}</h3>
                 </div>
 
                 {/* Skill badges */}
@@ -66,7 +66,7 @@ export default function Skills() {
                   {group.items.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2.5 py-1 text-xs font-medium rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] text-zinc-300 hover:border-[#3a3a3a] hover:text-white transition-colors"
+                      className="px-2.5 py-1 text-xs font-medium rounded-lg bg-surface2 border border-line2 text-t2 hover:border-line3 hover:text-t1 transition-colors"
                     >
                       {skill}
                     </span>

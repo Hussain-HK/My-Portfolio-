@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import ThemeProvider from '@/components/ThemeProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,35 +16,36 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Hakeem Hussain — Data Engineer & Analytics Engineer',
+  title: 'Hakeem Hussain — Senior BI Developer',
   description:
-    'Portfolio of Hakeem Hussain — Data Engineer, Analytics Engineer, and Data Analyst. Building scalable data infrastructure and turning raw signals into business clarity.',
+    'Portfolio of Hakeem Hussain — Senior Business Intelligence Developer with 7+ years experience in Power BI, DAX, SQL, and Python. Microsoft Certified Data Analyst.',
   keywords: [
-    'Data Engineer',
-    'Analytics Engineer',
+    'Power BI',
+    'DAX',
+    'Business Intelligence',
     'Data Analyst',
-    'dbt',
-    'Snowflake',
-    'BigQuery',
-    'Apache Spark',
-    'Kafka',
-    'Airflow',
-    'Python',
     'SQL',
+    'Python',
+    'Data Visualization',
+    'Microsoft Certified',
+    'Power Automate',
+    'Tableau',
   ],
   authors: [{ name: 'Hakeem Hussain' }],
   openGraph: {
-    title: 'Hakeem Hussain — Data Engineer & Analytics Engineer',
-    description: 'Building data infrastructure that turns raw signals into business clarity.',
+    title: 'Hakeem Hussain — Senior BI Developer',
+    description: 'Transforming raw data into executive-ready insights with Power BI, DAX, and Python.',
     type: 'website',
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
-      <body className="bg-[#0a0a0a] text-zinc-100 font-sans antialiased">
-        {children}
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`} suppressHydrationWarning>
+      <body className="bg-bg text-t1 font-sans antialiased">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

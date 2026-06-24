@@ -90,13 +90,13 @@ export default function Hero() {
             transition: 'opacity 0.6s ease 0.25s, transform 0.6s ease 0.25s',
           }}
         >
-          <span className="block text-white">Hakeem</span>
+          <span className="block text-t1">Hakeem</span>
           <span className="block gradient-text">Hussain</span>
         </h1>
 
         {/* Typewriter role */}
         <div
-          className="font-mono text-xl sm:text-2xl text-zinc-300 mb-6 h-8 flex items-center"
+          className="font-mono text-xl sm:text-2xl text-t2 mb-6 h-8 flex items-center"
           style={{
             opacity: mounted ? 1 : 0,
             transition: 'opacity 0.5s ease 0.45s',
@@ -108,7 +108,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <p
-          className="text-zinc-400 text-base sm:text-lg max-w-xl leading-relaxed mb-10"
+          className="text-t3 text-base sm:text-lg max-w-xl leading-relaxed mb-10"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? 'translateY(0)' : 'translateY(16px)',
@@ -136,7 +136,7 @@ export default function Hero() {
           </button>
           <button
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center gap-2 px-6 py-3 border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white font-medium rounded-xl transition-all duration-200 hover:bg-white/5 hover:-translate-y-0.5"
+            className="flex items-center gap-2 px-6 py-3 border border-zinc-700 hover:border-zinc-500 text-t2 hover:text-t1 font-medium rounded-xl transition-all duration-200 hover:bg-t1/5 hover:-translate-y-0.5"
           >
             Let&apos;s Talk
           </button>
@@ -161,7 +161,7 @@ export default function Hero() {
               target={label !== 'Email' ? '_blank' : undefined}
               rel="noopener noreferrer"
               aria-label={label}
-              className="flex items-center gap-2 text-zinc-500 hover:text-teal-400 transition-colors text-sm"
+              className="flex items-center gap-2 text-t4 hover:text-teal-400 transition-colors text-sm"
             >
               <Icon className="w-5 h-5" />
               <span className="hidden sm:inline">{label}</span>
@@ -173,7 +173,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-600 hover:text-teal-400 transition-colors animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-t5 hover:text-teal-400 transition-colors animate-bounce"
         aria-label="Scroll down"
       >
         <ArrowDown className="w-5 h-5" />

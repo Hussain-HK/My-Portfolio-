@@ -14,7 +14,7 @@ export default function BlogSection() {
   const preview = blogPosts.slice(0, 3)
 
   return (
-    <section id="blog" className="py-24 border-t border-[#1f1f1f]">
+    <section id="blog" className="py-24 border-t border-line">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <motion.div
@@ -25,7 +25,7 @@ export default function BlogSection() {
           className="mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
         >
           <div>
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Blog</h2>
+            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-t1">Blog</h2>
           </div>
           <Link
             href="/blog"
@@ -48,29 +48,29 @@ export default function BlogSection() {
             >
               <Link
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col h-full bg-[#111111] border border-[#1f1f1f] hover:border-[#2a2a2a] rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
+                className="group flex flex-col h-full bg-surface border border-line hover:border-line2 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
               >
                 {/* Category */}
                 <div className="flex items-center gap-3 mb-4">
                   <span
-                    className={`text-xs font-medium px-2.5 py-1 rounded-full ${categoryColors[post.category] ?? 'text-zinc-400 bg-zinc-400/10'}`}
+                    className={`text-xs font-medium px-2.5 py-1 rounded-full ${categoryColors[post.category] ?? 'text-t3 bg-zinc-400/10'}`}
                   >
                     {post.category}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-semibold text-white text-base leading-snug mb-3 group-hover:text-teal-300 transition-colors line-clamp-2">
+                <h3 className="font-semibold text-t1 text-base leading-snug mb-3 group-hover:text-teal-300 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-zinc-500 text-sm leading-relaxed line-clamp-3 flex-1 mb-5">
+                <p className="text-t4 text-sm leading-relaxed line-clamp-3 flex-1 mb-5">
                   {post.excerpt}
                 </p>
 
                 {/* Footer */}
-                <div className="flex items-center justify-between text-xs text-zinc-600 mt-auto pt-4 border-t border-[#1f1f1f]">
+                <div className="flex items-center justify-between text-xs text-t5 mt-auto pt-4 border-t border-line">
                   <span>{post.formattedDate}</span>
                   <div className="flex items-center gap-1">
                     <Clock className="w-3 h-3" />

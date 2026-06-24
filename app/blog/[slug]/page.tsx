@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation'
+﻿import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowLeft, Clock, Calendar } from 'lucide-react'
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPost(slug)
   if (!post) return { title: 'Post not found' }
   return {
-    title: `${post.title} — Hakeem Hussain`,
+    title: `${post.title} â€” Hakeem Hussain`,
     description: post.excerpt,
   }
 }
@@ -62,19 +62,19 @@ export default async function BlogPostPage({ params }: Props) {
   if (textLines.length) blocks.push({ type: 'text', content: textLines.join('\n') })
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-bg">
       {/* Nav bar */}
-      <div className="border-b border-[#1f1f1f] sticky top-0 z-10 bg-[#0a0a0a]/90 backdrop-blur-md">
+      <div className="border-b border-line sticky top-0 z-10 bg-bg/90 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center gap-4">
           <Link
             href="/blog"
-            className="flex items-center gap-2 text-zinc-500 hover:text-teal-400 transition-colors text-sm font-mono"
+            className="flex items-center gap-2 text-t4 hover:text-teal-400 transition-colors text-sm font-mono"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             All posts
           </Link>
-          <span className="text-zinc-700">/</span>
-          <span className="font-mono text-zinc-500 text-sm truncate">{post.slug}</span>
+          <span className="text-t5">/</span>
+          <span className="font-mono text-t4 text-sm truncate">{post.slug}</span>
         </div>
       </div>
 
@@ -84,25 +84,25 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="flex flex-wrap items-center gap-3 mb-5">
             <span
               className={`text-xs font-medium px-2.5 py-1 rounded-full ${
-                categoryColors[post.category] ?? 'text-zinc-400 bg-zinc-400/10'
+                categoryColors[post.category] ?? 'text-t3 bg-zinc-400/10'
               }`}
             >
               {post.category}
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-zinc-500">
+            <span className="flex items-center gap-1.5 text-xs text-t4">
               <Calendar className="w-3 h-3" />
               {post.formattedDate}
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-zinc-500">
+            <span className="flex items-center gap-1.5 text-xs text-t4">
               <Clock className="w-3 h-3" />
               {post.readingTime}
             </span>
           </div>
 
-          <h1 className="font-mono text-3xl sm:text-4xl font-bold text-white leading-tight mb-5">
+          <h1 className="font-mono text-3xl sm:text-4xl font-bold text-t1 leading-tight mb-5">
             {post.title}
           </h1>
-          <p className="text-zinc-400 text-lg leading-relaxed">{post.excerpt}</p>
+          <p className="text-t3 text-lg leading-relaxed">{post.excerpt}</p>
         </header>
 
         {/* Divider */}
@@ -113,8 +113,8 @@ export default async function BlogPostPage({ params }: Props) {
           {blocks.map((block, i) => {
             if (block.type === 'code') {
               return (
-                <pre key={i} className="bg-[#111111] border border-[#1f1f1f] rounded-2xl p-5 overflow-x-auto my-6">
-                  <code className="text-zinc-300 text-sm font-mono leading-relaxed">
+                <pre key={i} className="bg-surface border border-line rounded-2xl p-5 overflow-x-auto my-6">
+                  <code className="text-t2 text-sm font-mono leading-relaxed">
                     {block.content}
                   </code>
                 </pre>
@@ -124,14 +124,14 @@ export default async function BlogPostPage({ params }: Props) {
               <div key={i}>
                 {block.content.split('\n').map((line, j) => {
                   if (line.startsWith('## '))
-                    return <h2 key={j} className="font-mono text-2xl font-bold text-white mt-10 mb-4">{line.slice(3)}</h2>
+                    return <h2 key={j} className="font-mono text-2xl font-bold text-t1 mt-10 mb-4">{line.slice(3)}</h2>
                   if (line.startsWith('### '))
-                    return <h3 key={j} className="font-semibold text-xl text-white mt-8 mb-3">{line.slice(4)}</h3>
+                    return <h3 key={j} className="font-semibold text-xl text-t1 mt-8 mb-3">{line.slice(4)}</h3>
                   if (line.startsWith('- '))
                     return (
                       <ul key={j} className="my-1">
-                        <li className="text-zinc-400 leading-relaxed ml-4 flex gap-2 items-start">
-                          <span className="text-teal-500 mt-1.5 shrink-0">▹</span>
+                        <li className="text-t3 leading-relaxed ml-4 flex gap-2 items-start">
+                          <span className="text-teal-500 mt-1.5 shrink-0">â–¹</span>
                           {line.slice(2)}
                         </li>
                       </ul>
@@ -143,7 +143,7 @@ export default async function BlogPostPage({ params }: Props) {
                           <tbody>
                             <tr>
                               {line.split('|').filter(Boolean).map((cell, k) => (
-                                <td key={k} className="px-4 py-2 border border-[#2a2a2a] text-zinc-400">
+                                <td key={k} className="px-4 py-2 border border-line2 text-t3">
                                   {cell.trim()}
                                 </td>
                               ))}
@@ -156,12 +156,12 @@ export default async function BlogPostPage({ params }: Props) {
                   // Inline bold & code
                   const parts = line.split(/(\*\*[^*]+\*\*|`[^`]+`)/)
                   return (
-                    <p key={j} className="text-zinc-400 leading-relaxed mb-3">
+                    <p key={j} className="text-t3 leading-relaxed mb-3">
                       {parts.map((part, k) => {
                         if (part.startsWith('**') && part.endsWith('**'))
-                          return <strong key={k} className="text-white font-semibold">{part.slice(2, -2)}</strong>
+                          return <strong key={k} className="text-t1 font-semibold">{part.slice(2, -2)}</strong>
                         if (part.startsWith('`') && part.endsWith('`'))
-                          return <code key={k} className="bg-[#1a1a1a] border border-[#2a2a2a] rounded px-1.5 py-0.5 text-teal-400 font-mono text-sm">{part.slice(1, -1)}</code>
+                          return <code key={k} className="bg-surface2 border border-line2 rounded px-1.5 py-0.5 text-teal-400 font-mono text-sm">{part.slice(1, -1)}</code>
                         return part
                       })}
                     </p>
@@ -173,19 +173,19 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         {/* Footer */}
-        <div className="mt-16 pt-8 border-t border-[#1f1f1f] flex items-center justify-between">
+        <div className="mt-16 pt-8 border-t border-line flex items-center justify-between">
           <Link
             href="/blog"
-            className="flex items-center gap-2 text-sm text-zinc-500 hover:text-teal-400 transition-colors font-mono"
+            className="flex items-center gap-2 text-sm text-t4 hover:text-teal-400 transition-colors font-mono"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to blog
           </Link>
           <Link
             href="/#contact"
-            className="text-sm text-zinc-500 hover:text-teal-400 transition-colors font-mono"
+            className="text-sm text-t4 hover:text-teal-400 transition-colors font-mono"
           >
-            Get in touch →
+            Get in touch â†’
           </Link>
         </div>
       </article>

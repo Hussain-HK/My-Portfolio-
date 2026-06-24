@@ -39,7 +39,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-24 border-t border-[#1f1f1f]">
+    <section id="contact" className="py-24 border-t border-line">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <motion.div
@@ -49,7 +49,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Contact</h2>
+          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-t1">Contact</h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -62,8 +62,8 @@ export default function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-white font-semibold text-xl mb-3">Let&apos;s work together</h3>
-              <p className="text-zinc-400 leading-relaxed">
+              <h3 className="text-t1 font-semibold text-xl mb-3">Let&apos;s work together</h3>
+              <p className="text-t3 leading-relaxed">
                 I&apos;m currently {siteConfig.availability.toLowerCase()}. Whether you have a data
                 engineering challenge, want to discuss analytics architecture, or just want to connect
                 — my inbox is always open.
@@ -71,8 +71,8 @@ export default function Contact() {
             </div>
 
             {/* Location */}
-            <div className="flex items-center gap-3 text-zinc-400 text-sm">
-              <div className="w-9 h-9 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center">
+            <div className="flex items-center gap-3 text-t3 text-sm">
+              <div className="w-9 h-9 rounded-xl bg-surface2 border border-line2 flex items-center justify-center">
                 <MapPin className="w-4 h-4 text-teal-400" />
               </div>
               {siteConfig.location}
@@ -86,9 +86,9 @@ export default function Contact() {
                   href={href}
                   target={label !== siteConfig.email ? '_blank' : undefined}
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-4 bg-[#111111] border border-[#1f1f1f] hover:border-teal-500/30 rounded-xl text-zinc-400 hover:text-teal-400 transition-all group"
+                  className="flex items-center gap-3 p-4 bg-surface border border-line hover:border-teal-500/30 rounded-xl text-t3 hover:text-teal-400 transition-all group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-[#1a1a1a] flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-lg bg-surface2 flex items-center justify-center shrink-0">
                     <Icon className="w-4 h-4" />
                   </div>
                   <span className="text-sm font-medium truncate">{label}</span>
@@ -105,10 +105,10 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             {status === 'sent' ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-16 bg-[#111111] border border-[#1f1f1f] rounded-2xl">
+              <div className="h-full flex flex-col items-center justify-center text-center py-16 bg-surface border border-line rounded-2xl">
                 <CheckCircle className="w-12 h-12 text-teal-400 mb-4" />
-                <h3 className="text-white font-semibold text-xl mb-2">Message sent!</h3>
-                <p className="text-zinc-400 text-sm">I&apos;ll get back to you as soon as possible.</p>
+                <h3 className="text-t1 font-semibold text-xl mb-2">Message sent!</h3>
+                <p className="text-t3 text-sm">I&apos;ll get back to you as soon as possible.</p>
                 <button
                   onClick={() => setStatus('idle')}
                   className="mt-6 text-sm text-teal-400 hover:text-teal-300 font-mono transition-colors"
@@ -119,11 +119,11 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-[#111111] border border-[#1f1f1f] rounded-2xl p-8 space-y-5"
+                className="bg-surface border border-line rounded-2xl p-8 space-y-5"
               >
                 {/* Name */}
                 <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-2" htmlFor="name">
+                  <label className="block text-sm font-medium text-t3 mb-2" htmlFor="name">
                     Name
                   </label>
                   <input
@@ -133,13 +133,13 @@ export default function Contact() {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Your name"
-                    className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
+                    className="w-full bg-surface2 border border-line2 rounded-xl px-4 py-3 text-sm text-t1 placeholder-t5 outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
                   />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-2" htmlFor="email">
+                  <label className="block text-sm font-medium text-t3 mb-2" htmlFor="email">
                     Email
                   </label>
                   <input
@@ -149,13 +149,13 @@ export default function Contact() {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="your@email.com"
-                    className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
+                    className="w-full bg-surface2 border border-line2 rounded-xl px-4 py-3 text-sm text-t1 placeholder-t5 outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
                   />
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-2" htmlFor="message">
+                  <label className="block text-sm font-medium text-t3 mb-2" htmlFor="message">
                     Message
                   </label>
                   <textarea
@@ -165,7 +165,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Tell me about your project or just say hello..."
-                    className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all resize-none"
+                    className="w-full bg-surface2 border border-line2 rounded-xl px-4 py-3 text-sm text-t1 placeholder-t5 outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all resize-none"
                   />
                 </div>
 
@@ -189,9 +189,9 @@ export default function Contact() {
                   {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
 
-                <p className="text-xs text-zinc-600 text-center">
+                <p className="text-xs text-t5 text-center">
                   Or email directly:{' '}
-                  <a href={`mailto:${siteConfig.email}`} className="text-zinc-500 hover:text-teal-400 transition-colors">
+                  <a href={`mailto:${siteConfig.email}`} className="text-t4 hover:text-teal-400 transition-colors">
                     {siteConfig.email}
                   </a>
                 </p>

@@ -10,7 +10,7 @@ export default function Projects() {
   const displayed = showAll ? projects : projects.slice(0, 3)
 
   return (
-    <section id="projects" className="py-24 border-t border-[#1f1f1f]">
+    <section id="projects" className="py-24 border-t border-line">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <motion.div
@@ -21,7 +21,7 @@ export default function Projects() {
           className="mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
         >
           <div>
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Projects</h2>
+            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-t1">Projects</h2>
           </div>
           <button
             onClick={() => setShowAll(!showAll)}
@@ -40,7 +40,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: i * 0.07, ease: 'easeOut' }}
-              className="group bg-[#111111] border border-[#1f1f1f] hover:border-teal-500/30 rounded-2xl p-6 flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/5 hover:-translate-y-1"
+              className="group bg-surface border border-line hover:border-teal-500/30 rounded-2xl p-6 flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/5 hover:-translate-y-1"
             >
               {/* Top row */}
               <div className="flex items-start justify-between mb-4">
@@ -65,7 +65,7 @@ export default function Projects() {
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-zinc-600 hover:text-zinc-300 transition-colors"
+                      className="text-t5 hover:text-t2 transition-colors"
                       aria-label="Live demo"
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -75,7 +75,7 @@ export default function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-600 hover:text-zinc-300 transition-colors"
+                    className="text-t5 hover:text-t2 transition-colors"
                     aria-label="GitHub repo"
                   >
                     <GitBranch className="w-4 h-4" />
@@ -84,10 +84,10 @@ export default function Projects() {
               </div>
 
               {/* Title + description */}
-              <h3 className="font-semibold text-white text-base mb-2 group-hover:text-teal-300 transition-colors">
+              <h3 className="font-semibold text-t1 text-base mb-2 group-hover:text-teal-300 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-zinc-500 text-sm leading-relaxed flex-1 mb-5">
+              <p className="text-t4 text-sm leading-relaxed flex-1 mb-5">
                 {project.description}
               </p>
 
@@ -96,7 +96,7 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-0.5 text-[11px] font-mono text-zinc-400 bg-[#1a1a1a] border border-[#2a2a2a] rounded-md"
+                    className="px-2 py-0.5 text-[11px] font-mono text-t3 bg-surface2 border border-line2 rounded-md"
                   >
                     {tag}
                   </span>
@@ -118,7 +118,7 @@ export default function Projects() {
             href={`${projects[0].githubUrl}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-teal-400 transition-colors font-mono"
+            className="inline-flex items-center gap-2 text-sm text-t4 hover:text-teal-400 transition-colors font-mono"
           >
             <GitBranch className="w-4 h-4" />
             View more on GitHub

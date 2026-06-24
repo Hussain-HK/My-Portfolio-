@@ -6,7 +6,7 @@ import { experience } from '@/lib/data'
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 border-t border-[#1f1f1f]">
+    <section id="experience" className="py-24 border-t border-line">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <motion.div
@@ -16,7 +16,7 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Experience</h2>
+          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-t1">Experience</h2>
         </motion.div>
 
         {/* Timeline */}
@@ -35,16 +35,16 @@ export default function Experience() {
                 className="relative pl-12 sm:pl-16"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 sm:left-2 top-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-teal-500 bg-[#0a0a0a] flex items-center justify-center">
+                <div className="absolute left-0 sm:left-2 top-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-teal-500 bg-bg flex items-center justify-center">
                   <div className="w-2 h-2 rounded-full bg-teal-400" />
                 </div>
 
                 {/* Card */}
-                <div className="bg-[#111111] border border-[#1f1f1f] hover:border-[#2a2a2a] rounded-2xl p-6 transition-colors group">
+                <div className="bg-surface border border-line hover:border-line2 rounded-2xl p-6 transition-colors group">
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
-                      <h3 className="font-semibold text-white text-lg leading-tight">{job.title}</h3>
+                      <h3 className="font-semibold text-t1 text-lg leading-tight">{job.title}</h3>
                       <a
                         href={job.companyUrl}
                         target="_blank"
@@ -55,7 +55,7 @@ export default function Experience() {
                         <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     </div>
-                    <div className="flex flex-col gap-1 sm:items-end text-xs text-zinc-500 shrink-0">
+                    <div className="flex flex-col gap-1 sm:items-end text-xs text-t4 shrink-0">
                       <div className="flex items-center gap-1.5">
                         <Calendar className="w-3 h-3" />
                         {job.startDate} — {job.endDate}
@@ -70,7 +70,7 @@ export default function Experience() {
                   {/* Bullet points */}
                   <ul className="space-y-2.5 mb-5">
                     {job.description.map((point, j) => (
-                      <li key={j} className="flex gap-3 text-sm text-zinc-400 leading-relaxed">
+                      <li key={j} className="flex gap-3 text-sm text-t3 leading-relaxed">
                         <span className="text-teal-500 mt-0.5 shrink-0">▹</span>
                         {point}
                       </li>
