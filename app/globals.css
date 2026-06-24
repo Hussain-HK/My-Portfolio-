@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #f4f4f5;
+    --teal: #2dd4bf;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2a2a2a #0a0a0a;
+  }
+  *::-webkit-scrollbar { width: 5px; }
+  *::-webkit-scrollbar-track { background: #0a0a0a; }
+  *::-webkit-scrollbar-thumb { background-color: #2a2a2a; border-radius: 3px; }
+
+  ::selection {
+    background-color: rgba(45, 212, 191, 0.2);
+    color: #f4f4f5;
+  }
+}
+
+@layer utilities {
+  /* Subtle dot grid for hero background */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Gradient text teal → indigo */
+  .gradient-text {
+    background: linear-gradient(135deg, #2dd4bf 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Teal glow used behind hero name */
+  .teal-glow {
+    background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(45,212,191,0.12) 0%, transparent 70%);
+  }
+
+  /* Section fade-in utility */
+  .section-fade {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Prose for blog post content */
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f4f4f5;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-jetbrains), monospace;
+}
+
+.blog-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f4f4f5;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+  color: #a1a1aa;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.blog-content ul, .blog-content ol {
+  color: #a1a1aa;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.blog-content li { margin-bottom: 0.3rem; }
+
+.blog-content strong { color: #f4f4f5; }
+
+.blog-content code {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 0.85em;
+  color: #2dd4bf;
+}
+
+.blog-content pre {
+  background: #111111;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #d4d4d8;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.blog-content th {
+  background: #1a1a1a;
+  color: #f4f4f5;
+  padding: 0.6rem 1rem;
+  text-align: left;
+  border: 1px solid #2a2a2a;
+}
+
+.blog-content td {
+  color: #a1a1aa;
+  padding: 0.6rem 1rem;
+  border: 1px solid #1f1f1f;
+}
+
+.blog-content blockquote {
+  border-left: 3px solid #2dd4bf;
+  padding-left: 1rem;
+  color: #71717a;
+  margin: 1rem 0;
+  font-style: italic;
+}
