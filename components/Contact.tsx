@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, MapPin, Send, CheckCircle } from 'lucide-react'
+import { GitBranch, Linkedin, Mail, MapPin, Send, CheckCircle } from 'lucide-react'
 import { siteConfig } from '@/lib/data'
 
 // Replace YOUR_FORM_ID with your Formspree form ID (free at formspree.io)
@@ -33,7 +33,7 @@ export default function Contact() {
   }
 
   const socials = [
-    { icon: Github,   href: siteConfig.github,              label: 'GitHub' },
+    { icon: GitBranch, href: siteConfig.github,             label: 'GitHub' },
     { icon: Linkedin, href: siteConfig.linkedin,            label: 'LinkedIn' },
     { icon: Mail,     href: `mailto:${siteConfig.email}`,   label: siteConfig.email },
   ]
@@ -49,7 +49,6 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <p className="font-mono text-teal-400 text-sm mb-2">{'// 06. get_in_touch'}</p>
           <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Contact</h2>
         </motion.div>
 

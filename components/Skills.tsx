@@ -13,11 +13,11 @@ const fadeUp = {
 }
 
 const categoryColors: Record<string, { dot: string; bg: string; text: string }> = {
-  'Languages & Query':    { dot: 'bg-teal-400',   bg: 'bg-teal-400/10',   text: 'text-teal-400' },
-  'Data Engineering':     { dot: 'bg-indigo-400', bg: 'bg-indigo-400/10', text: 'text-indigo-400' },
-  'Warehouses & Lakes':   { dot: 'bg-amber-400',  bg: 'bg-amber-400/10',  text: 'text-amber-400' },
-  'Cloud & DevOps':       { dot: 'bg-rose-400',   bg: 'bg-rose-400/10',   text: 'text-rose-400' },
-  'BI & Visualisation':   { dot: 'bg-violet-400', bg: 'bg-violet-400/10', text: 'text-violet-400' },
+  'BI & Visualisation':   { dot: 'bg-teal-400',   bg: 'bg-teal-400/10',   text: 'text-teal-400' },
+  'Languages & Query':    { dot: 'bg-indigo-400', bg: 'bg-indigo-400/10', text: 'text-indigo-400' },
+  'Data & ETL':           { dot: 'bg-amber-400',  bg: 'bg-amber-400/10',  text: 'text-amber-400' },
+  'Cloud & Platforms':    { dot: 'bg-rose-400',   bg: 'bg-rose-400/10',   text: 'text-rose-400' },
+  'Automation & Tools':   { dot: 'bg-violet-400', bg: 'bg-violet-400/10', text: 'text-violet-400' },
 }
 
 export default function Skills() {
@@ -32,7 +32,6 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <p className="font-mono text-teal-400 text-sm mb-2">{'// 02. tech_stack'}</p>
           <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Skills & Tools</h2>
         </motion.div>
 

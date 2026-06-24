@@ -1,6 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { MapPin, Mail, Briefcase, Code2 } from 'lucide-react'
 import { siteConfig } from '@/lib/data'
 
@@ -14,10 +16,12 @@ const stagger = {
 }
 
 export default function About() {
+  const [imgError, setImgError] = useState(false)
+
   const stats = [
     { value: `${siteConfig.yearsOfExperience}+`, label: 'Years experience', icon: Briefcase },
-    { value: `${siteConfig.projectsCompleted}+`, label: 'Projects shipped', icon: Code2 },
-    { value: `${siteConfig.pipelinesBuilt}+`, label: 'Pipelines built', icon: '⚙' },
+    { value: `${siteConfig.projectsCompleted}+`, label: 'Dashboards built', icon: Code2 },
+    { value: `${siteConfig.staffTrained}+`, label: 'Staff trained', icon: '🎓' },
   ]
 
   return (
@@ -29,20 +33,27 @@ export default function About() {
           whileInView="show"
           viewport={{ once: true, margin: '-80px' }}
         >
-          {/* Section heading */}
           <motion.div variants={fadeUp} className="mb-14">
-            <p className="font-mono text-teal-400 text-sm mb-2">{'// 01. about_me'}</p>
             <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">About Me</h2>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left — avatar + quick info */}
             <motion.div variants={fadeUp} className="flex flex-col gap-6">
-              {/* Avatar */}
               <div className="flex items-center gap-5">
                 <div className="relative shrink-0">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-teal-500 to-indigo-600 flex items-center justify-center text-3xl font-mono font-bold text-white shadow-lg">
-                    {siteConfig.initials}
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-teal-500 to-indigo-600 flex items-center justify-center text-3xl font-mono font-bold text-white shadow-lg">
+                    {imgError ? (
+                      <span>{siteConfig.initials}</span>
+                    ) : (
+                      <Image
+                        src="/profile.jpg"
+                        alt={siteConfig.name}
+                        width={96}
+                        height={96}
+                        className="w-full h-full object-cover"
+                        onError={() => setImgError(true)}
+                      />
+                    )}
                   </div>
                   <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-green-400 border-2 border-[#0a0a0a]" />
                 </div>
@@ -56,7 +67,6 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Quick facts */}
               <div className="bg-[#111111] border border-[#1f1f1f] rounded-2xl p-5 space-y-3">
                 {[
                   { icon: Mail, label: 'Email', value: siteConfig.email },
@@ -73,7 +83,6 @@ export default function About() {
                 ))}
               </div>
 
-              {/* Stats row */}
               <div className="grid grid-cols-3 gap-3">
                 {stats.map(({ value, label }) => (
                   <div
@@ -87,29 +96,28 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* Right — bio */}
             <motion.div variants={fadeUp} className="space-y-5">
               <p className="text-zinc-300 leading-relaxed text-base">{siteConfig.bio}</p>
               <p className="text-zinc-400 leading-relaxed text-base">{siteConfig.bio2}</p>
 
               <div className="pt-2 space-y-3">
-                <p className="text-sm font-mono text-zinc-500">{'// what I focus on'}</p>
+                <p className="text-sm font-mono text-zinc-500">What I focus on</p>
                 {[
                   {
-                    title: 'Pipeline Architecture',
-                    desc: 'Designing fault-tolerant batch and streaming pipelines that scale.',
+                    title: 'Power BI Development',
+                    desc: 'Building advanced DAX models and enterprise dashboards executives rely on.',
                   },
                   {
-                    title: 'Data Modelling',
-                    desc: 'Building clean, testable dbt models that analysts trust and love.',
+                    title: 'Data Modelling & ETL',
+                    desc: 'Designing clean, scalable data models and automated pipelines.',
                   },
                   {
-                    title: 'Analytics Engineering',
-                    desc: 'Bridging the gap between raw data and business-ready metrics.',
+                    title: 'Self-Service BI',
+                    desc: 'Enabling non-technical teams to explore and understand their own data.',
                   },
                   {
-                    title: 'Data Quality',
-                    desc: 'Implementing testing frameworks that catch issues before dashboards.',
+                    title: 'Training & Enablement',
+                    desc: 'Upskilling teams in Power BI and data literacy through workshops and demos.',
                   },
                 ].map(({ title, desc }) => (
                   <div key={title} className="flex gap-3">

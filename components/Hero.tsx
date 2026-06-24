@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Github, Linkedin, Mail, ArrowDown, ExternalLink } from 'lucide-react'
+import { GitBranch, Linkedin, Mail, ArrowDown, ExternalLink } from 'lucide-react'
 import { siteConfig } from '@/lib/data'
 
 function useTypewriter(words: string[], typingSpeed = 90, deletingSpeed = 50, pauseMs = 2200) {
@@ -151,7 +151,7 @@ export default function Hero() {
           }}
         >
           {[
-            { icon: Github, href: siteConfig.github, label: 'GitHub' },
+            { icon: GitBranch, href: siteConfig.github, label: 'GitHub' },
             { icon: Linkedin, href: siteConfig.linkedin, label: 'LinkedIn' },
             { icon: Mail, href: `mailto:${siteConfig.email}`, label: 'Email' },
           ].map(({ icon: Icon, href, label }) => (

@@ -1,22 +1,20 @@
-// ─── UPDATE ALL PLACEHOLDER VALUES MARKED WITH ← ───────────────────────────
-
 export const siteConfig = {
   name: 'Hakeem Hussain',
   initials: 'HH',
-  roles: ['Data Engineer', 'Analytics Engineer', 'Data Analyst'],
-  tagline: 'Building data infrastructure that turns raw signals into business clarity.',
-  bio: "I'm a Data Engineer and Analytics Engineer with a passion for building scalable data systems that empower teams to make smarter decisions. I specialise in designing end-to-end pipelines, transforming messy data into clean reliable models, and creating analytics infrastructure that scales from startup to enterprise.",
-  bio2: "When I'm not engineering data pipelines, I'm exploring new tools in the modern data stack, contributing to open-source projects, or writing about data engineering best practices.",
-  email: 'hussainakeem57@gmail.com',
-  github: 'https://github.com/your-username',       // ← Update
-  linkedin: 'https://linkedin.com/in/your-profile',  // ← Update
-  twitter: '',                                        // ← Optional
-  location: 'Lagos, Nigeria',                         // ← Update
+  roles: ['Senior BI Developer', 'Power BI Expert', 'Data Analyst'],
+  tagline: 'Transforming raw data into executive-ready insights with Power BI, DAX, and Python.',
+  bio: "Senior Business Intelligence Developer with 7+ years of experience designing and implementing enterprise data solutions. I specialise in Microsoft Power BI, SQL, DAX, and Python — building dashboards used daily by C-suite and branch managers, and self-service platforms that empower entire organisations to explore their own data.",
+  bio2: "Microsoft Certified Data Analyst and Certified Trainer. I've delivered BI training to 100+ professionals at banking and telecom organisations, and led migrations from legacy tools like Qlik View to modern Power BI platforms.",
+  email: 'HussainAkeem57@gmail.com',
+  github: 'https://github.com/Hussain-HK',
+  linkedin: 'https://linkedin.com/in/hakeem-hussain',
+  twitter: '',
+  location: 'Lagos, Nigeria',
   availability: 'Open to opportunities',
-  yearsOfExperience: 4,   // ← Update
-  projectsCompleted: 20,  // ← Update
-  pipelinesBuilt: 100,    // ← Update
-  resumeUrl: '/resume.pdf', // ← Drop resume.pdf into /public folder
+  yearsOfExperience: 7,
+  projectsCompleted: 65,
+  staffTrained: 100,
+  resumeUrl: '/resume.pdf',
 }
 
 export type Skill = {
@@ -27,29 +25,29 @@ export type Skill = {
 
 export const skills: Skill[] = [
   {
-    category: 'Languages & Query',
-    icon: '{ }',
-    items: ['Python', 'SQL', 'R', 'Bash', 'YAML'],
-  },
-  {
-    category: 'Data Engineering',
-    icon: '⚙',
-    items: ['dbt', 'Apache Airflow', 'Apache Spark', 'Apache Kafka', 'Flink', 'PySpark'],
-  },
-  {
-    category: 'Warehouses & Lakes',
-    icon: '◈',
-    items: ['Snowflake', 'BigQuery', 'Redshift', 'PostgreSQL', 'Delta Lake', 'Iceberg'],
-  },
-  {
-    category: 'Cloud & DevOps',
-    icon: '☁',
-    items: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Git', 'GitHub Actions', 'Terraform'],
-  },
-  {
     category: 'BI & Visualisation',
     icon: '◎',
-    items: ['Looker', 'Power BI', 'Tableau', 'Metabase', 'Apache Superset'],
+    items: ['Power BI', 'Tableau', 'SSRS', 'Power BI Service', 'Report Builder', 'Dashboard Design'],
+  },
+  {
+    category: 'Languages & Query',
+    icon: '{ }',
+    items: ['SQL (T-SQL)', 'DAX', 'M Query', 'Python', 'Stored Procedures'],
+  },
+  {
+    category: 'Data & ETL',
+    icon: '⚙',
+    items: ['Data Modeling', 'ETL', 'SSIS', 'Power Query', 'Excel', 'Data Blending', 'Data Warehousing'],
+  },
+  {
+    category: 'Cloud & Platforms',
+    icon: '☁',
+    items: ['Azure Data Studio', 'Azure Analytics', 'SQL Server', 'SAP', 'Oracle', 'Azure Boards'],
+  },
+  {
+    category: 'Automation & Tools',
+    icon: '▶',
+    items: ['Power Automate', 'PowerApps', 'Git', 'JIRA', 'Azure DevOps', 'Agile / Scrum'],
   },
 ]
 
@@ -66,49 +64,66 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    title: 'Senior Analytics Engineer',   // ← Update
-    company: 'Company Name',              // ← Update
-    companyUrl: 'https://company.com',    // ← Update
-    location: 'Remote',
-    startDate: 'Jan 2023',
+    title: 'Senior Business Intelligence Analyst',
+    company: 'First Bank Nigeria',
+    companyUrl: 'https://www.firstbanknigeria.com',
+    location: 'Lagos, Nigeria',
+    startDate: 'Jan 2024',
     endDate: 'Present',
     description: [
-      'Built and maintained the core dbt transformation layer serving 50+ analysts and data scientists',
-      'Designed a Snowflake data warehouse architecture reducing query costs by 40%',
-      'Led migration from legacy ETL scripts to Airflow DAGs, improving pipeline reliability from 87% to 99.5%',
-      'Established data quality testing standards adopted across the engineering organisation',
+      'Led development of 65+ enterprise-level Power BI reports and dashboards used daily by executive management.',
+      'Automated data pipelines using Power Automate and SQL jobs, reducing data processing time by 40%.',
+      'Trained 100+ staff in Power BI and Excel through internal capacity-building initiatives.',
+      'Led cross-functional team to implement a customer segmentation model using Python and SQL.',
+      'Deployed self-service BI solutions enabling 200+ branch managers to independently monitor KPIs.',
     ],
-    tags: ['dbt', 'Snowflake', 'Airflow', 'Python'],
+    tags: ['Power BI', 'DAX', 'SQL', 'Python', 'Power Automate'],
   },
   {
-    title: 'Data Engineer',               // ← Update
-    company: 'Company Name',              // ← Update
-    companyUrl: 'https://company.com',    // ← Update
+    title: 'BI Analyst / Trainer',
+    company: 'Foresight BI & Analytics Consulting',
+    companyUrl: 'https://www.foresightbi.com.ng',
     location: 'Lagos, Nigeria',
-    startDate: 'Jun 2021',
-    endDate: 'Dec 2022',
+    startDate: 'Jan 2019',
+    endDate: 'Dec 2023',
     description: [
-      'Built real-time streaming pipelines using Kafka and Spark processing 2M+ events per day',
-      'Implemented a feature store on BigQuery enabling ML teams to reuse features across 12+ models',
-      'Automated 30+ manual reporting workflows, saving the analytics team 20+ hours per week',
-      'Collaborated with cross-functional teams to define data contracts and SLAs',
+      'Built and published interactive Power BI and Tableau dashboards from multiple data sources using Data Blending.',
+      'Developed BI modules using Power BI, SSIS, and SSRS; automated business processes with Power Automate and PowerApps.',
+      'Created stored procedures and SQL queries to pull data into Power Pivot data models.',
+      'Used DAX to write measures and calculated tables; designed charts including cross tabs, maps, scatter plots, pie, and bar.',
+      'Delivered weekly presentations to business stakeholders on reports, changes, and analytics findings.',
     ],
-    tags: ['Kafka', 'Spark', 'BigQuery', 'Python'],
+    tags: ['Power BI', 'Tableau', 'SQL', 'SSIS', 'DAX', 'Power Automate', 'SSRS'],
   },
   {
-    title: 'Data Analyst',                // ← Update
-    company: 'Company Name',              // ← Update
-    companyUrl: 'https://company.com',    // ← Update
-    location: 'Lagos, Nigeria',
-    startDate: 'Sep 2020',
-    endDate: 'May 2021',
+    title: 'Data Analyst (Freelance)',
+    company: 'US Dept. of Veterans Affairs',
+    companyUrl: 'https://www.va.gov',
+    location: 'Remote',
+    startDate: '2022',
+    endDate: '2022',
     description: [
-      'Built executive-level KPI dashboards in Power BI consumed by C-suite and board members',
-      'Wrote complex SQL queries analysing customer behaviour, directly informing product decisions',
-      'Developed an automated anomaly detection system reducing data incident response time by 60%',
-      'Partnered with the product team to instrument event tracking and build behavioural analytics',
+      'Migrated Qlik View and Qlik Sense BI assets to Power BI for the Veterans Health Administration (VHA) and Veterans Benefits Administration (VBA).',
+      'Built dashboards for Calls Tracking, Facility Utilization, Strategy Programming, and Portfolio management.',
+      'Analyzed survey data against client KPI requests using Oracle Data Warehouse, MySQL, Azure Boards, and Excel.',
+      'Created Azure DevOps user stories and delivered training demos and presentations to business users.',
     ],
-    tags: ['SQL', 'Power BI', 'Python', 'Excel'],
+    tags: ['Power BI', 'Qlik View', 'Oracle', 'SQL', 'DAX', 'Azure DevOps'],
+  },
+  {
+    title: 'Reporting Analyst',
+    company: 'Compass UK',
+    companyUrl: 'https://www.compass-group.com',
+    location: 'Lagos, Nigeria',
+    startDate: 'Dec 2019',
+    endDate: 'Oct 2020',
+    description: [
+      'Maintained dashboards and reports for multiple sales and unit department teams.',
+      'Conducted system audits and monitored data collection processes to meet stakeholder reporting requirements.',
+      'Built reports using Power BI, Power Automate, PowerApps, and Azure Analytics Services.',
+      'Performed exploratory data analysis (EDA) using Python programming.',
+    ],
+    tags: ['Power BI', 'Power Automate', 'Azure', 'Python', 'DAX'],
   },
 ]
 
@@ -123,56 +138,56 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: 'Real-Time Event Pipeline',
+    title: 'Enterprise Performance Dashboard',
     description:
-      'End-to-end streaming pipeline processing 1M+ events per day. Kafka for ingestion, Spark Streaming for transformation, BigQuery as the analytical sink with sub-second latency.',
-    tags: ['Kafka', 'Spark', 'BigQuery', 'Python', 'Docker'],
-    githubUrl: 'https://github.com',  // ← Update
+      'Real-time Power BI dashboard for executive leadership at First Bank Nigeria, integrating data from CRM, ERP, and core banking systems. Used by C-suite for daily KPI monitoring.',
+    tags: ['Power BI', 'DAX', 'SQL Server', 'CRM', 'ERP'],
+    githubUrl: 'https://github.com/Hussain-HK',
     demoUrl: '',
     featured: true,
   },
   {
-    title: 'Data Warehouse Migration',
+    title: 'Customer Churn Analysis',
     description:
-      'End-to-end migration from legacy Redshift to Snowflake with a dbt transformation layer. Reduced query costs by 40% and improved data freshness from T+1 to near real-time.',
-    tags: ['Snowflake', 'dbt', 'Redshift', 'SQL', 'Python'],
-    githubUrl: 'https://github.com',  // ← Update
+      'Predictive churn model combining Power BI visualization with Python machine learning. Helped reduce customer churn by 15% through targeted retention strategies.',
+    tags: ['Power BI', 'Python', 'SQL', 'Machine Learning', 'DAX'],
+    githubUrl: 'https://github.com/Hussain-HK',
     demoUrl: '',
     featured: true,
   },
   {
-    title: 'Airflow Orchestration Platform',
+    title: 'Qlik to Power BI Migration',
     description:
-      'Scalable DAG orchestration system managing 200+ data pipelines with automated monitoring, alerting, and retry logic. Reduced pipeline failures by 75%.',
-    tags: ['Airflow', 'Python', 'Docker', 'Kubernetes'],
-    githubUrl: 'https://github.com',  // ← Update
+      'Led full migration of Qlik View health dashboards to Power BI for the US Department of Veterans Affairs, covering VHA and VBA dashboards including Calls Tracking and Facility Utilization.',
+    tags: ['Power BI', 'Qlik View', 'Oracle', 'SQL', 'Azure DevOps'],
+    githubUrl: 'https://github.com/Hussain-HK',
     demoUrl: '',
     featured: true,
   },
   {
-    title: 'Business Analytics Dashboard',
+    title: 'Expense Management Tracker',
     description:
-      'Executive KPI dashboard in Power BI consuming clean data from a dbt-modelled Snowflake warehouse. Automated daily refresh with email distribution to 40+ stakeholders.',
-    tags: ['Power BI', 'dbt', 'Snowflake', 'DAX'],
-    githubUrl: 'https://github.com',  // ← Update
+      'Automated monthly expense reporting using Power Automate and Power BI. Eliminated manual processes, reducing errors and saving 20+ man-hours per month.',
+    tags: ['Power Automate', 'Power BI', 'SQL', 'Excel'],
+    githubUrl: 'https://github.com/Hussain-HK',
     demoUrl: '',
     featured: false,
   },
   {
-    title: 'ML Feature Store',
+    title: 'Self-Service BI Platform',
     description:
-      'Centralised feature store on BigQuery enabling ML teams to discover and reuse features across 15+ models. Cut feature engineering time by 60%.',
-    tags: ['BigQuery', 'Python', 'dbt', 'Feast'],
-    githubUrl: 'https://github.com',  // ← Update
+      'Designed and deployed a self-service BI ecosystem at First Bank Nigeria enabling 200+ branch managers to independently monitor KPIs without relying on the central BI team.',
+    tags: ['Power BI', 'DAX', 'M Query', 'Power BI Service'],
+    githubUrl: 'https://github.com/Hussain-HK',
     demoUrl: '',
     featured: false,
   },
   {
-    title: 'dbt Quality Testing Suite',
+    title: 'Sales Performance Analytics Suite',
     description:
-      'Open-source dbt package providing 30+ custom data quality tests — freshness checks, referential integrity, statistical distributions, and business rule validation.',
-    tags: ['dbt', 'SQL', 'Python', 'GitHub Actions'],
-    githubUrl: 'https://github.com',  // ← Update
+      'Multi-source Tableau and Power BI dashboards using Data Blending at Foresight BI. Included scheduled automated refreshes and weekly stakeholder presentations.',
+    tags: ['Power BI', 'Tableau', 'SQL', 'SSIS', 'DAX'],
+    githubUrl: 'https://github.com/Hussain-HK',
     demoUrl: '',
     featured: false,
   },

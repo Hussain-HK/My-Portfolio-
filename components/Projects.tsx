@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Github, ExternalLink, Star } from 'lucide-react'
+import { GitBranch, ExternalLink } from 'lucide-react'
 import { projects } from '@/lib/data'
 
 export default function Projects() {
@@ -21,7 +21,6 @@ export default function Projects() {
           className="mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
         >
           <div>
-            <p className="font-mono text-teal-400 text-sm mb-2">{'// 04. project_archive'}</p>
             <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Projects</h2>
           </div>
           <button
@@ -79,7 +78,7 @@ export default function Projects() {
                     className="text-zinc-600 hover:text-zinc-300 transition-colors"
                     aria-label="GitHub repo"
                   >
-                    <Github className="w-4 h-4" />
+                    <GitBranch className="w-4 h-4" />
                   </a>
                 </div>
               </div>
@@ -121,7 +120,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-teal-400 transition-colors font-mono"
           >
-            <Github className="w-4 h-4" />
+            <GitBranch className="w-4 h-4" />
             View more on GitHub
           </a>
         </motion.div>

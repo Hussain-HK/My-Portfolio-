@@ -16,7 +16,6 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <p className="font-mono text-teal-400 text-sm mb-2">{'// 03. work_history'}</p>
           <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Experience</h2>
         </motion.div>
 

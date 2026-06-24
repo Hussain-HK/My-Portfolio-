@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Clock, Tag } from 'lucide-react'
+import { ArrowRight, Clock } from 'lucide-react'
 import { blogPosts } from '@/lib/blog-posts'
 
 const categoryColors: Record<string, string> = {
@@ -25,7 +25,6 @@ export default function BlogSection() {
           className="mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
         >
           <div>
-            <p className="font-mono text-teal-400 text-sm mb-2">{'// 05. writing'}</p>
             <h2 className="font-mono text-3xl sm:text-4xl font-bold text-white">Blog</h2>
           </div>
           <Link
